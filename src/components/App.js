@@ -45,86 +45,63 @@ class App extends Component {
 
   render() {
     return (
-        <div>
-         
-            <Row>
-              <Col md={3} className='left'>
-                <div>
-                  <div>
-                    <h1>Insurl</h1>
-                  </div>
-                  <div>
-                    <div>
-                      {' '}
-                      <Button
-                        variant='outline-light'
-                        style={{ outline: 'none', border: 'none' }}
-                      >
-                        <Link to='/'>
-                          <span className='span'>
-                            <BsGrid1X2Fill />
-                          </span>{' '}
-                          Dashboard
-                        </Link>
-                      </Button>{' '}
-                    </div>
-                    <div>
-                      {' '}
-                      <Button
-                        variant='outline-light'
-                        style={{ outline: 'none', border: 'none' }}
-                      >
-                        <Link
-                          to={{
-                            pathname: '/policy',
-                            state: { display: false },
-                          }}
-                        >
-                          <span className='span'>
-                            <BsReverseLayoutTextSidebarReverse />
-                          </span>
-                          Policies
-                        </Link>
-                      </Button>{' '}
-                    </div>
-                    <div>
-                      <Button
-                        variant='outline-light'
-                        style={{ outline: 'none', border: 'none' }}
-                      >
-                        <Link to='/profile'>Profile</Link>
-                      </Button>{' '}
-                    </div>
-                    <div>
-                      <Button
-                        variant='outline-light'
-                        style={{ outline: 'none', border: 'none' }}
-                      >
-                        <Link to='/withdrawal'>Withdrawal</Link>
-                      </Button>{' '}
-                    </div>
-                    <div>
-                      <Link to='/support'> Support</Link>
-                    </div>
-                    <div>
-                      <Setting />
-                    </div>
-                  </div>
-                  <div>
-                    <Logout />
-                  </div>
-                </div>
-              </Col>
+    <div className="container-fluid">
+      <Row>
+        <Col xs={5} md={3} className='left'>
+          <div className="mx-auto">
+            <h1 className="insurl">Insurl</h1>
+            <div>
+              {' '}
+              <Button variant='outline-light' style={{ outline: 'none', border: 'none' }}>
+                <Link to='/'>
+                  <span className='span'><BsGrid1X2Fill/></span>
+                  Dashboard
+                </Link>
+              </Button>
+              {' '}
+            </div>
+            <div>
+              {' '}
+              <Button variant='outline-light' style={{ outline: 'none', border: 'none' }}>
+                <Link to={{pathname: '/policy', state: { display: false },}}>
+                  <span className='span'><BsReverseLayoutTextSidebarReverse/></span>
+                  Policies
+                </Link>
+              </Button>
+              {' '}
+            </div>
+            <div>
+              <Button variant='outline-light' style={{ outline: 'none', border: 'none' }}>
+                <Link to='/profile'>Profile</Link>
+              </Button>
+              {' '}
+            </div>
+            <div>
+              <Button variant='outline-light' style={{ outline: 'none', border: 'none' }}>
+                <Link to='/withdrawal'>Withdrawal</Link>
+              </Button>
+              {' '}
+            </div>
+            <div>
+              <Link to='/support'> Support</Link>
+            </div>
+            <div>
+              <Setting />
+            </div>            
+            <div>
+              <Logout />
+            </div>
+          </div>
+        </Col>
 
-              <Col md={9} className='right'>hello
-                <div className='displayright'>
-                  <Switch>
-                    <Route exact path='/' component={Dashboard} />
-                    <Route path='/policy' component={Policies} />
-
-                  </Switch>
-                </div>
-              </Col>
+        <Col xs={7} md={9} className='right'>
+          <div className='displayright'>
+            <Switch>
+              <Route exact path='/' component={Dashboard} />
+              <Route path='/policy' component={Policies} />
+            </Switch>
+          </div>
+        </Col>
             </Row>
           
         </div>
