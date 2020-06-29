@@ -45,16 +45,16 @@ class App extends Component {
 
   render() {
     return (
-        <div>
-         
-            <Row>
-              <Col md={3} className='left'>
-                <div>
-                  <div>
+        <div className="container-fluid" >
+          <Container fluid>
+            <Row >
+              <Col xs={5} md={3} className='left'>
+                <div className='innercol'>
+                  <div className='insurl'>
                     <h1>Insurl</h1>
                   </div>
-                  <div>
-                    <div>
+                  <div className='wrapper'>
+                    <div className='dashboard'>
                       {' '}
                       <Button
                         variant='outline-light'
@@ -68,7 +68,7 @@ class App extends Component {
                         </Link>
                       </Button>{' '}
                     </div>
-                    <div>
+                    <div className='pocilies'>
                       {' '}
                       <Button
                         variant='outline-light'
@@ -87,7 +87,7 @@ class App extends Component {
                         </Link>
                       </Button>{' '}
                     </div>
-                    <div>
+                    <div className='profile'>
                       <Button
                         variant='outline-light'
                         style={{ outline: 'none', border: 'none' }}
@@ -116,7 +116,7 @@ class App extends Component {
                 </div>
               </Col>
 
-              <Col md={9} className='right'>hello
+              <Col xs={7} md={9} className='right' style={{padding:"0",margin:"auto"}}>
                 <div className='displayright'>
                   <Switch>
                     <Route exact path='/' component={Dashboard} />
@@ -126,7 +126,7 @@ class App extends Component {
                 </div>
               </Col>
             </Row>
-          
+          </Container>
         </div>
     );
   }

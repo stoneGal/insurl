@@ -23,7 +23,7 @@ class DisplayItem extends Component {
             fontWeight: '600',
             fontStyle: 'normal',
             color: '#1B2036',
-            margin: ' 70px 40px',
+            margin: ' 70px auto',
             lineHeight: '45px',
             
           }}
@@ -34,9 +34,11 @@ class DisplayItem extends Component {
         <div
           style={{
             display: 'flex',
-            // border: '1px solid blue',
-            margin: ' 60px 40px',
-            justifyContent: 'space-between',
+            alignItems: "center",
+            border: '1px solid blue',
+            width: "auto",
+            margin: "auto",
+            // justifyContent: 'space-between',
           }}
         >
           <div className='leftdiv'>
@@ -86,15 +88,19 @@ class DisplayItem extends Component {
               OR
             </p>
           </div>
-          <div style={{ border: '1px solid red', margin: '70px 30px' }}>
+          <div style={{ border: '1px solid red', width:"auto" }}>
            <Link to="/">
              <Button
               style={{
                 backgroundColor: '#F88600',
                 color: '#ffffff',
-                padding: ' 3px 60px',
+                padding: ' 3px 40px',
                 border:"none",
-                outline:"none"
+                outline:"none",
+                position: "absolute",
+                right:"50px"
+               
+               
               }}
             >
               Done
@@ -109,8 +115,8 @@ class DisplayItem extends Component {
             // border: '1px solid red',
             marginTop: ' 90px',
             marginBottom: ' 40px',
-            marginLeft: '40px',
-            marginRight: '40px',
+            // marginLeft: '40px',
+            // marginRight: '40px',
           }}
         >
           <p
@@ -138,7 +144,7 @@ class DisplayItem extends Component {
                 {' '}
                 Card name
               </Form.Label>
-              <Form.Control type='name' />
+              <Form.Control type='name' style={{width:"auto"}} />
             </Form.Group>
           </Form>
 
@@ -157,7 +163,7 @@ class DisplayItem extends Component {
                   {' '}
                   Card number
                 </Form.Label>
-                <Form.Control type='name' />
+                <Form.Control type='name' style={{width:"auto"}}/>
               </Col>
               <Col>
                 <Form.Label
@@ -172,7 +178,7 @@ class DisplayItem extends Component {
                   {' '}
                   Expiry Date
                 </Form.Label>
-                <Form.Control type='name' style={{ width: '150px' }} />
+                <Form.Control type='name'style={{ width: '60px' }}  />
               </Col>
 
               <Col>
@@ -186,7 +192,7 @@ class DisplayItem extends Component {
                 >
                   Cvv
                 </Form.Label>
-                <Form.Control type='name' style={{ width: '60px' }} />
+                <Form.Control type='name' style={{ width: '40px' }} />
               </Col>
             </Row>
           </Form>
@@ -226,8 +232,8 @@ class DisplayItem extends Component {
 
               marginTop: '30px',
               // marginright: '50px'
-              position:"relative",
-              left: "400px"
+              // position:"relative",
+              // left: "400px"
             }}
           >
             Pay

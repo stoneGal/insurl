@@ -8,27 +8,29 @@ import { Link } from 'react-router-dom';
 
 const DashJsx = (props) => {
   return (
-    <div style={{ margin: '0', padding: '0' }}>
+    <div style={{ margin: '0', padding: '0', border:"1px solid red" }}>
       <div
         style={{
           display: 'flex',
           marginTop: '70px',
-          marginLeft: '30px',
-          justifyContent: 'space-between',
+          // marginLeft: '30px',
+          // justifyContent: 'space-evenly',
+          border:"1px solid blue",
+          // width:"70px",
         }}
       >
-        <h4
+        <h5
           style={{
             fontFamily: 'Poppins',
             fontStyle: 'normal',
-            fontWeight: '600',
+            fontWeight: '500',
             fontSize: '50px',
-            lineHeight: '75px',
+            // lineHeight: '75px',
             color: '#1B2036',
           }}
         >
           Hello Confidence!
-        </h4>
+        </h5>
         <Link to= {{ pathname: '/policy', state: { display: true }}} >
         <Button style={{ backgroundColor: '#F88600', height:"30px" }}>
           {' '}
@@ -46,7 +48,7 @@ const DashJsx = (props) => {
           paddingTop: '10px',
           paddingBottom: '10px',
           marginTop: '30px',
-          marginLeft: '30px',
+          // marginLeft: '30px',
         }}
       >
         <h6
