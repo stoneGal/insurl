@@ -9,7 +9,13 @@ function Dashboard() {
 
     
     return (
-        <DashJsx />
+        <div>
+            {/* <Button   variant="outline-light" onClick={props.addItem} >
+            <h5><span style={{marginRight:"10px"}}><i className='fas fa-th-list' > </i></span>Dashboard</h5>
+            </Button> */}
+            <DashJsx />
+            {/* {this.state.isAddDisplayState && }  */}
+        </div>
     )
 }
 

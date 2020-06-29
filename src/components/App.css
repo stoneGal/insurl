@@ -2,35 +2,27 @@
 /* .App{
   width: 100%;
 } */
-.left{
-  border: 1px solid green;
-  background-color: #303960;
-  min-height: 100vh;
-}  
-.insurl{
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 2rem;
-  color: #FFFFFF;
-}
-.link-active{
-  background-color: #F88600;
-  color: white;
-  text-decoration: none;
-}
-.link-inactive {
-  background-color: none;
-  color: white;
-  text-decoration: none;
-  padding: 0.2rem;
-}
-.link-inactive:hover {
-  background-color: #F88600;
-  color: white;
-  text-decoration: none;
-  padding: 0.2rem;
-}
+
+.container-fluid{
+    border: 1px solid red;
+    margin: 0;
+    padding: 0;
+  }
+  .left{
+    border: 1px solid green;
+    background-color: #303960;
+  }
+  
+  .insurl{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 70px;
+  }
   .wrapper{
     border: 1px solid white;
     margin-top: 40px;
@@ -38,12 +30,21 @@
     margin-left: 20px;
   }
   .dashboard{
+    margin-top: 30px;
+    margin-bottom: 30px;
     color: #FFFFFF;
+    
+    /* background-color: #F88600; */
   }
   .pocilies{
+    margin-top: 30px;
+    margin-bottom: 30px;
     color: #FFFFFF;
+    /* background-color: #F88600; */
   }
   .profile{
+    margin-top: 30px;
+    margin-bottom: 30px;
     color: #FFFFFF;
   }
   .withdrawal{
