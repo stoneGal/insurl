@@ -47,64 +47,66 @@ class App extends Component {
     return (
     <div className="container-fluid">
       <Row>
-        <Col xs={5} md={3} className='left'>
-          <div className="mx-auto">
-            <h1 className="insurl">Insurl</h1>
+        <Col xs={5} md={3} className='left mx-auto'>
+          <div style={{display: 'flex', flexDirection: 'column'}}>
+          <h1 className="insurl">Insurl</h1>
+          <div style={{marginTop: '2rem'}}>
+            <Link to='/' className="link-inactive" style={{display: 'grid', gridTemplateColumns: '1rem 3rem', gridColumnGap: '2px'}}>
+            <BsGrid1X2Fill/>
+            <p>Dashboard</p>
+            </Link>
+          </div>
             <div>
-              {' '}
-              <Button variant='outline-light' style={{ outline: 'none', border: 'none' }}>
-                <Link to='/'>
-                  <span className='span'><BsGrid1X2Fill/></span>
-                  Dashboard
-                </Link>
-              </Button>
-              {' '}
+              <Link to={{pathname: '/policy', state: { display: false },}} className="link-inactive"  style={{display: 'grid', gridTemplateColumns: '1rem 3rem', gridColumnGap: '2px'}}>
+              <BsReverseLayoutTextSidebarReverse/>
+              <p>Policies</p>
+              </Link>
             </div>
             <div>
-              {' '}
-              <Button variant='outline-light' style={{ outline: 'none', border: 'none' }}>
-                <Link to={{pathname: '/policy', state: { display: false },}}>
-                  <span className='span'><BsReverseLayoutTextSidebarReverse/></span>
-                  Policies
-                </Link>
-              </Button>
-              {' '}
+              <Link to='/profile' className="link-inactive" style={{display: 'grid', gridTemplateColumns: '1rem 3rem', gridColumnGap: '2px'}}>
+              <BsReverseLayoutTextSidebarReverse/>
+              <p>Profile</p>
+              </Link>
             </div>
             <div>
-              <Button variant='outline-light' style={{ outline: 'none', border: 'none' }}>
-                <Link to='/profile'>Profile</Link>
-              </Button>
-              {' '}
+              <Link to='/profile' className="link-inactive" style={{display: 'grid', gridTemplateColumns: '1rem 3rem', gridColumnGap: '2px'}}>
+              <BsReverseLayoutTextSidebarReverse/>
+              <p>Withdrawal</p>
+              </Link>
             </div>
             <div>
-              <Button variant='outline-light' style={{ outline: 'none', border: 'none' }}>
-                <Link to='/withdrawal'>Withdrawal</Link>
-              </Button>
-              {' '}
+              <Link to='/profile' className="link-inactive" style={{display: 'grid', gridTemplateColumns: '1rem 3rem', gridColumnGap: '2px'}}>
+              <BsReverseLayoutTextSidebarReverse/>
+              <p>Support</p>
+              </Link>
             </div>
             <div>
-              <Link to='/support'> Support</Link>
+              <Link to='/profile' className="link-inactive" style={{display: 'grid', gridTemplateColumns: '1rem 3rem', gridColumnGap: '2px'}}>
+              <i className='far fa-sun'></i>
+              <p>Settings</p>
+              </Link>
             </div>
+            <div style={{flexBasis: '10rem'}}>
             <div>
-              <Setting />
-            </div>            
-            <div>
-              <Logout />
+              <Link to='/' className="link-inactive" style={{display: 'grid', gridTemplateColumns: '1rem 3rem', gridColumnGap: '2px'}}>
+              <i className='fas fa-sign-in-alt'></i>
+              <p>Logout</p>
+              </Link>
+            </div>
             </div>
           </div>
         </Col>
 
         <Col xs={7} md={9} className='right'>
-          <div className='displayright'>
+          <div>
             <Switch>
               <Route exact path='/' component={Dashboard} />
               <Route path='/policy' component={Policies} />
             </Switch>
           </div>
         </Col>
-            </Row>
-          
-        </div>
+      </Row> 
+    </div>
     );
   }
 }

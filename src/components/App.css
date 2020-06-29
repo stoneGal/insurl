@@ -14,6 +14,23 @@
   font-size: 2rem;
   color: #FFFFFF;
 }
+.link-active{
+  background-color: #F88600;
+  color: white;
+  text-decoration: none;
+}
+.link-inactive {
+  background-color: none;
+  color: white;
+  text-decoration: none;
+  padding: 0.2rem;
+}
+.link-inactive:hover {
+  background-color: #F88600;
+  color: white;
+  text-decoration: none;
+  padding: 0.2rem;
+}
   .wrapper{
     border: 1px solid white;
     margin-top: 40px;
