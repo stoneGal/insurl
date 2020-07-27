@@ -1,45 +1,109 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Row, Col } from 'react-bootstrap';
 import { FaHands } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-
-
-
 const DashJsx = (props) => {
   return (
-    <div style={{ margin: '0', padding: '0', border:"1px solid red" }}>
-      <div
-        style={{
-          display: 'flex',
-          marginTop: '70px',
-          // marginLeft: '30px',
-          // justifyContent: 'space-evenly',
-          border:"1px solid blue",
-          // width:"70px",
-        }}
-      >
-        <h5
+    <div className='container-fluid' style={{ paddingTop: '3rem' }}>
+      <Row>
+        <Col md='9'>
+          <h2
+            style={{
+              fontFamily: 'Poppins',
+              color: '#1B2036',
+              fontWeight: '600',
+              fontStyle: 'normal',
+            }}
+          >
+            Hello Confidence!
+          </h2>
+        </Col>
+        <Col md='3'>
+          <Link to={{ pathname: '/policy', state: { display: true } }}>
+            <Button style={{ backgroundColor: '#F88600' }}>
+              {' '}
+              +Add Policy{' '}
+            </Button>
+          </Link>
+        </Col>
+      </Row>
+      <Row style={{ marginTop: '3rem' }}>
+        <div
           style={{
-            fontFamily: 'Poppins',
-            fontStyle: 'normal',
-            fontWeight: '500',
-            fontSize: '50px',
-            // lineHeight: '75px',
-            color: '#1B2036',
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'flex-start',
           }}
         >
-          Hello Confidence!
-        </h5>
-        <Link to= {{ pathname: '/policy', state: { display: true }}} >
-        <Button style={{ backgroundColor: '#F88600', height:"30px" }}>
-          {' '}
-          +Add Policy{' '}
-        </Button></Link>
-        
-      </div>
+          {/* Write media query for the width of this card */}
+          <div
+            style={{
+              padding: '1rem',
+              width: '100%',
+              backgroundColor: 'white',
+              boxShadow: '2px 2px 2px 2px #888888',
+              borderRadius: '2px',
+            }}
+            className='card'
+          >
+            {/* <Row>
+              <Col xs={9}>
+              <p className="card-title" style={{fontWeight: '600', color: "#002149", fontFamily:"Poppins"}}>Life Insurance</p>
+              </Col>
+              <Col xs={3}>
+                <FaHands style={{color: "rgba(48, 57, 96, 0.2)", fontSize:"50px", paddingRight:"10px"}} />
+              </Col>
+            </Row> */}
+            <p
+              className='card-title'
+              style={{
+                fontWeight: '600',
+                fontFamily: 'Poppins',
+                fontSize: '20.2074px',
+                color: ' rgba(0, 33, 73, 0.5)',
+              }}
+            >
+              Life Insurance{' '}
+              <span
+                style={{
+                  fontSize: '50px',
+                  paddingRight: '10px',
+                  paddingLeft: '20px',
+                }}
+              >
+                <FaHands style={{ color: 'rgba(48, 57, 96, 0.2)' }} />
+              </span>{' '}
+            </p>
 
-      <div
+            <p
+              style={{
+                color: '#1B2036',
+                fontFamily: 'Poppins',
+                fontSize: '20px',
+                lineHeight: '33px',
+              }}
+            >
+              Plan ₦1,000,000 <br />
+              Paid ₦20,000 <br />
+              <span style={{ color: '#303960' }}>
+                Policy number: 123456789{' '}
+              </span>
+            </p>
+
+            <Link
+              to={{ pathname: '/policy', state: { display: true } }}
+              style={{ color: '#F88600' }}
+            >
+              {' '}
+              <p style={{ color: '#F88600' }}>View More &gt;&gt; </p>{' '}
+            </Link>
+          </div>
+        </div>
+      </Row>
+
+      {/* <div
         style={{
           backgroundColor: 'white',
           width: '240px',
@@ -90,7 +154,7 @@ const DashJsx = (props) => {
         <Link to={{ pathname: '/policy', state: { display: true }}}  style={{ color: '#F88600' }}>
           Enter &gt;&gt;
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };

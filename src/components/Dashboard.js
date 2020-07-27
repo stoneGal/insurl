@@ -3,20 +3,17 @@ import React from 'react';
 import DashJsx from './DashJsx';
 
 
-// import { DashJsx } from "./DashJsx"
-
 function Dashboard() {
 
-    
+    const center={
+        margin:"auto 0px"
+    }
     return (
-        <div>
-            {/* <Button   variant="outline-light" onClick={props.addItem} >
-            <h5><span style={{marginRight:"10px"}}><i className='fas fa-th-list' > </i></span>Dashboard</h5>
-            </Button> */}
-            <DashJsx />
-            {/* {this.state.isAddDisplayState && }  */}
+        <div style={center}>
+             <DashJsx />
         </div>
-    )
+       
+    );
 }
 
 export default Dashboard;

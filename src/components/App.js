@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { BsGrid1X2Fill } from 'react-icons/bs';
 import { BsReverseLayoutTextSidebarReverse } from 'react-icons/bs';
 
 import './App.css';
 import Dashboard from './Dashboard';
-import Setting from './Setting';
-import Logout from './Logout';
+// import Setting from './Setting';
+// import Logout from './Logout';
 import Policies from './Policies';
-// import Profile from './Profile';
-// import Support from './Support';
-// import Withdrawal from './Withdrawal';
-// import DisplayItem from './DisplayItem';
-// import DashJsx from './DashJsx';
-// import Modals from './Modals';
 
 class App extends Component {
   // constructor(props) {
@@ -45,89 +39,168 @@ class App extends Component {
 
   render() {
     return (
-        <div className="container-fluid" >
-          <Container fluid>
-            <Row >
-              <Col xs={5} md={3} className='left'>
-                <div className='innercol'>
-                  <div className='insurl'>
-                    <h1>Insurl</h1>
-                  </div>
-                  <div className='wrapper'>
-                    <div className='dashboard'>
-                      {' '}
-                      <Button
-                        variant='outline-light'
-                        style={{ outline: 'none', border: 'none' }}
-                      >
-                        <Link to='/'>
-                          <span className='span'>
-                            <BsGrid1X2Fill />
-                          </span>{' '}
-                          Dashboard
-                        </Link>
-                      </Button>{' '}
-                    </div>
-                    <div className='pocilies'>
-                      {' '}
-                      <Button
-                        variant='outline-light'
-                        style={{ outline: 'none', border: 'none' }}
-                      >
-                        <Link
-                          to={{
-                            pathname: '/policy',
-                            state: { display: false },
-                          }}
-                        >
-                          <span className='span'>
-                            <BsReverseLayoutTextSidebarReverse />
-                          </span>
-                          Policies
-                        </Link>
-                      </Button>{' '}
-                    </div>
-                    <div className='profile'>
-                      <Button
-                        variant='outline-light'
-                        style={{ outline: 'none', border: 'none' }}
-                      >
-                        <Link to='/profile'>Profile</Link>
-                      </Button>{' '}
-                    </div>
-                    <div>
-                      <Button
-                        variant='outline-light'
-                        style={{ outline: 'none', border: 'none' }}
-                      >
-                        <Link to='/withdrawal'>Withdrawal</Link>
-                      </Button>{' '}
-                    </div>
-                    <div>
-                      <Link to='/support'> Support</Link>
-                    </div>
-                    <div>
-                      <Setting />
-                    </div>
-                  </div>
-                  <div>
-                    <Logout />
-                  </div>
-                </div>
-              </Col>
+      <div className='container-fluid'>
+        <Row>
+          <Col xs={5} md={3} className='left mx-auto'>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <h1
+                className='insurl'
+                style={{ textAlign: 'center', marginTop: '10px' }}
+              >
+                Insurl
+              </h1>
 
-              <Col xs={7} md={9} className='right' style={{padding:"0",margin:"auto"}}>
-                <div className='displayright'>
-                  <Switch>
-                    <Route exact path='/' component={Dashboard} />
-                    <Route path='/policy' component={Policies} />
-
-                  </Switch>
+              <div style={{ marginTop: '2rem' }}>
+                <Link
+                  to='/'
+                  className='link-inactive'
+                  style={{
+                    display: 'grid',
+                    // gridTemplateColumns: '1rem 3rem',
+                    gridColumnGap: '50px',
+                    // textAlign:"center"
+                  }}
+                >
+                  <p className='spacesbetw spacesbetwbet'>
+                    <span className='iconspace'>
+                      <BsGrid1X2Fill />
+                    </span>{' '}
+                    Dashboard
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to={{ pathname: '/policy', state: { display: false } }}
+                  className='link-inactive'
+                  style={{
+                    display: 'grid',
+                    // gridTemplateColumns: '1rem 3rem',
+                    gridColumnGap: '50px',
+                    // textAlign:"center"
+                  }}
+                >
+                  <p className='spacesbetw'>
+                    {' '}
+                    <span className='iconspace'>
+                      <BsReverseLayoutTextSidebarReverse />
+                    </span>
+                    Policies
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to='/profile'
+                  className='link-inactive'
+                  style={{
+                    display: 'grid',
+                    // gridTemplateColumns: '1rem 3rem',
+                    gridColumnGap: '50px',
+                    // textAlign:"center"
+                  }}
+                >
+                  <p className='spacesbetw'>
+                    <span className='iconspace'>
+                      <BsReverseLayoutTextSidebarReverse />
+                    </span>{' '}
+                    Profile
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to='/profile'
+                  className='link-inactive'
+                  style={{
+                    display: 'grid',
+                    // gridTemplateColumns: '1rem 3rem',
+                    gridColumnGap: '50px',
+                    // textAlign:"center"
+                  }}
+                >
+                  <p className='spacesbetw'>
+                    <span className='iconspace'>
+                      <BsReverseLayoutTextSidebarReverse />
+                    </span>{' '}
+                   Claims
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to='/profile'
+                  className='link-inactive'
+                  style={{
+                    display: 'grid',
+                    // gridTemplateColumns: '1rem 3rem',
+                    gridColumnGap: '50px',
+                    // textAlign:"center"
+                  }}
+                >
+                  <p className='spacesbetw'>
+                    <span className='iconspace'>
+                      {' '}
+                      <BsReverseLayoutTextSidebarReverse />
+                    </span>
+                    Support
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to='/profile'
+                  className='link-inactive'
+                  style={{
+                    display: 'grid',
+                    // gridTemplateColumns: '1rem 3rem',
+                    gridColumnGap: '50px',
+                    // textAlign:"center"
+                  }}
+                >
+                  <p className='spacesbetw'>
+                    <span className='iconspace'>
+                      {' '}
+                      <i className='far fa-sun'></i>
+                    </span>{' '}
+                    Settings
+                  </p>
+                </Link>
+              </div>
+              <div style={{ flexBasis: '10rem' }}>
+                <div>
+                  <Link
+                    to='/'
+                    className='link-inactive'
+                    style={{
+                      display: 'grid',
+                      // gridTemplateColumns: '1rem 3rem',
+                      gridColumnGap: '50px',
+                      // textAlign:"center"
+                    }}
+                  >
+                    <p className='spacesbetw'>
+                      <span className='iconspace'>
+                        <i className='fas fa-sign-in-alt'></i>
+                      </span>{' '}
+                      Logout
+                    </p>
+                  </Link>
                 </div>
-              </Col>
-            </Row>
-          </Container>
-        </div>
+              </div>
+            </div>
+          </Col>
+
+          <Col xs={7} md={9} className='right'>
+            <div>
+              <Switch>
+                <Route exact path='/' component={Dashboard} />
+                <Route path='/policy' component={Policies} />
+              </Switch>
+            </div>
+          </Col>
+        </Row>
+      </div>
     );
   }
 }

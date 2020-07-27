@@ -1,202 +1,166 @@
 import React, { Component } from 'react';
-import { Button, Row, Col, Form } from 'react-bootstrap';
+import { Button, Row, Col, Form, Dropdown} from 'react-bootstrap';
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io';
 import Modals from './Modals';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class DisplayItem extends Component {
-  state = { show: false };
 
+  state = { show: false };
   showModal = () => {
     this.setState({ show: true });
   };
 
-  
+  state = { showMe: false };
+  showmodal = () => {
+    this.setState({ showMe: true });
+  };
+
+
 
   render() {
     return (
-      <div >
-        <div
+      <div className='container-fluid'>
+        <p
           style={{
-            // border: '1px solid red',
-            fontSize: '30px',
-            fontWeight: '600',
+            fontSize: '20px',
+            fontWeight: '500',
             fontStyle: 'normal',
             color: '#1B2036',
-            margin: ' 70px auto',
-            lineHeight: '45px',
+            paddingTop: '3rem',
+          }}
+        >
+         Policies &gt; BVN and phone number &gt;Policy plan &gt;Enter beneficiary details &gt;Beneficiary details
+        </p>
+              <div style={{marginBottom:"130px"}}>
+                {/* <p></p> */}
+              <Dropdown >
+                  <Dropdown.Toggle style={{backgroundColor:"#F88600"}} id="dropdown-basic">
+                  Please select a payment option
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">GOLD ₦5000</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">BRONZE ₦10000</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">PLATINUM ₦500000</Dropdown.Item>
+                  </Dropdown.Menu>
+              </Dropdown>
+              </div>
+                
+
+
+
+        <Row style={{ marginTop: '5rem' }}>
+          
+          <Col md='9'>
+            <p style={{ lineHeight: '1rem' }}>Bank Transfer</p>
+            <p style={{ lineHeight: '1rem', fontWeight: 'bold' }}>
+              Bank Name: Bank of Nigeria
+            </p>
+            <p style={{ lineHeight: '1rem', fontWeight: 'bold' }}>
+              Account Number: 3456789012
+            </p>
+          </Col>
+          <Col md='3'>
             
-          }}
-        >
-          <h4>Make payment</h4>
-        </div>
 
-        <div
-          style={{
-            display: 'flex',
-            alignItems: "center",
-            border: '1px solid blue',
-            width: "auto",
-            margin: "auto",
-            // justifyContent: 'space-between',
-          }}
-        >
-          <div className='leftdiv'>
-            <p
-              style={{
-                fontFamily: 'Poppins',
-                fontStyle: 'normal',
-                fontWeight: 'normal',
-                fontSize: '20px',
 
-                color: '#1B2036',
-              }}
-            >
-              Bank transfer
-            </p>
-            <p
-              style={{
-                fontFamily: 'Poppins',
-                fontStyle: 'normal',
-                fontWeight: '600',
-                fontSize: '20px',
-                color: '#1B2036',
-              }}
-            >
-              Bank Name: <span> Bank of Nigeria</span>
-            </p>
-            <p
-              style={{
-                fontFamily: 'Poppins',
-                fontStyle: 'normal',
-                fontWeight: '600',
-                fontSize: '20px',
-                color: '#1B2036',
-              }}
-            >
-              Account number: 3456789012
-            </p>
+              <Button type="button" onClick={this.showmodal}  
+                style={{
+                  backgroundColor: '#F88600',
+                  color: '#ffffff',
+                  width: '100%',
+                }}
+              >
+                Done
+              </Button>
+
+             
+          </Col>
+        </Row>
+        <p style={{ lineHeight: '5rem', fontWeight: '700' }}>OR</p>
+        <Row style={{ marginTop: '2rem' }}>
+
+
+
+        <Modals show={this.state.showMe} >
             <p
               style={{
                 fontFamily: 'Poppins',
                 fontStyle: 'normal',
                 fontWeight: '500',
-                fontSize: '20px',
-                color: '#000000',
+                fontSize: '16px',
+                color: '#1B2036',
+                lineHeight: '24px',
+                marginBottom:"50px"
               }}
             >
-              OR
+             After your transfer, please send your proof <br/>
+              of payment via email to info@insurl.com. <br/>
+              You will be notified once payment is <br/>
+              confirmed and your policy will appear <br/>
+              on your dashboard.
             </p>
-          </div>
-          <div style={{ border: '1px solid red', width:"auto" }}>
-           <Link to="/">
-             <Button
-              style={{
-                backgroundColor: '#F88600',
-                color: '#ffffff',
-                padding: ' 3px 40px',
-                border:"none",
-                outline:"none",
-                position: "absolute",
-                right:"50px"
-               
-               
-              }}
-            >
-              Done
-            </Button>
-            </Link> 
-          </div>
-        </div>
+          </Modals>
 
-        <div
-          className='payment'
-          style={{
-            // border: '1px solid red',
-            marginTop: ' 90px',
-            marginBottom: ' 40px',
-            // marginLeft: '40px',
-            // marginRight: '40px',
-          }}
-        >
-          <p
-            style={{
-              fontFamily: 'Poppins',
-              fontStyle: 'normal',
-              fontWeight: 'normal',
-              fontSize: '20px',
-              lineHeight: '30px',
-            }}
-          >
-            Card payment
-          </p>
 
-          <Form>
-            <Form.Group>
-              <Form.Label
-                style={{
-                  fontFamily: 'Poppins',
-                  fontStyle: 'normal',
-                  fontWeight: '600',
-                  fontSize: '20px',
-                }}
-              >
-                {' '}
-                Card name
-              </Form.Label>
-              <Form.Control type='name' style={{width:"auto"}} />
-            </Form.Group>
-          </Form>
 
-          <Form>
-            <Row>
-              <Col>
-                <Form.Label
-                  style={{
-                    fontFamily: 'Poppins',
-                    fontStyle: 'normal',
-                    fontWeight: '600',
-                    fontSize: '20px',
-                    color: '#1B2036',
-                  }}
-                >
-                  {' '}
-                  Card number
-                </Form.Label>
-                <Form.Control type='name' style={{width:"auto"}}/>
-              </Col>
-              <Col>
-                <Form.Label
-                  style={{
-                    fontFamily: 'Poppins',
-                    fontStyle: 'normal',
-                    fontWeight: '600',
-                    fontSize: '20px',
-                    color: '#1B2036',
-                  }}
-                >
-                  {' '}
-                  Expiry Date
-                </Form.Label>
-                <Form.Control type='name'style={{ width: '60px' }}  />
-              </Col>
+          <Col>
+            <Form>
+              <p>Card payment</p>
+              <Form.Group>
+                <Form.Label style={{ fontWeight: '600' }}>Card name</Form.Label>
+                <Form.Control></Form.Control>
+              </Form.Group>
+              <Row>
+                <Col md='8'>
+                  <Form.Group>
+                    <Form.Label style={{ fontWeight: '600' }}>
+                      Card number
+                    </Form.Label>
+                    <Form.Control></Form.Control>
+                  </Form.Group>
+                </Col>
+                <Col md='2'>
+                  <Form.Group>
+                    <Form.Label style={{ fontWeight: '600' }}>
+                      Expiry Date
+                    </Form.Label>
+                    <div
+                      style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'auto auto auto',
+                      }}
+                    >
+                      <div>
+                        <Form.Control />
+                      </div>
+                      <div style={{ fontSize: '1.5rem' }}>/</div>
+                      <div>
+                        <Form.Control />
+                      </div>
+                    </div>
+                  </Form.Group>
+                </Col>
+                <Col md='2'>
+                  <Form.Group>
+                    <Form.Label style={{ fontWeight: '600' }}>Cvv</Form.Label>
+                    <Form.Control></Form.Control>
+                  </Form.Group>
+                </Col>
+              </Row>
+            </Form>
+          </Col>
+        </Row>
+        
 
-              <Col>
-                <Form.Label
-                  style={{
-                    fontFamily: 'Poppins',
-                    fontStyle: 'normal',
-                    fontWeight: '600',
-                    fontSize: '20px',
-                  }}
-                >
-                  Cvv
-                </Form.Label>
-                <Form.Control type='name' style={{ width: '40px' }} />
-              </Col>
-            </Row>
-          </Form>
-          <Modals show={this.state.show} >
+
+        <Row style={{ marginTop: '2rem', marginBottom: '1rem' }}>
+          <Col md='9'></Col>
+          <Col md='3'>
+            
+
+            <Modals show={this.state.show} >
             <IoMdCheckmarkCircleOutline
               style={{
                 color: '#2BB415',
@@ -215,30 +179,28 @@ class DisplayItem extends Component {
                 color: '#1B2036',
               }}
             >
-              {' '}
-              You are succesfully signed up for Insurl’s Life{' '}
+              
+              You are succesfully signed up for Insurl’s Life
               <span>Insurance Policy!</span>
             </p>
           </Modals>
-          <Button
-            type='button'
-            onClick={this.showModal}
-            style={{
-              backgroundColor: '#F88600',
-              fontFamily: 'Poppins',
-              fontStyle: 'normal',
-              fontSize: '16px',
-              padding: ' 3px 60px',
-
-              marginTop: '30px',
-              // marginright: '50px'
-              // position:"relative",
-              // left: "400px"
-            }}
-          >
-            Pay
-          </Button>
-        </div>
+              
+              <Button
+              type="button" onClick={this.showModal}
+                style={{
+                  backgroundColor: '#F88600',
+                  color: '#ffffff',
+                  width: '100%',
+                  fontFamily: 'Poppins',
+                  fontStyle: 'normal',
+                  fontSize: '16px'
+                }}
+              >
+                Pay
+              </Button>
+            
+          </Col>
+        </Row>
       </div>
     );
   }
